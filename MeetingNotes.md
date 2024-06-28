@@ -11,3 +11,5 @@
 - Begin work on connecting second monitor
 - Explore database options
 - Look into Github Projects to track work
+
+## Monday July 1, 2024
