@@ -13,3 +13,8 @@
 - Look into Github Projects to track work
 
 ## Monday July 1, 2024
+- Explore post session email summaries
+- Research plots of heart-rate over past few minutes/session
+- Share GitHub project permission with Jose
+- Workshop July 10th
+- Email Ryan about H10 purchasing
