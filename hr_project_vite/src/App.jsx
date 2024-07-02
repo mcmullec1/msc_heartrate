@@ -1,7 +1,9 @@
 
 import './App.css'
+import Monitor from './Monitor';
 import React, { useState, useEffect } from 'react';
 import { LineChart } from '@mui/x-charts/LineChart';
+import Box from '@mui/material/Box';
 
 function App() {
 
@@ -130,10 +132,17 @@ function App() {
   return (
     <>
       {/*<button id = "connect_button" ref = {connect_button}>Connect</button>*/}
-      <p id ="supported">{supportText}</p>
-      <p>{connected}</p>
-      <button onClick={() => toConnect()}>Connect</button>
-      <p id = "p_text" >{hr}</p>
+      {/*
+      <Box
+        display = "flex"
+        width = "100%"
+      >
+        <Box>
+          <p id ="supported">{supportText}</p>
+          <p>{connected}</p>
+          <button onClick={() => toConnect()}>Connect</button>
+          <p id = "p_text" >{hr}</p>
+        </Box>
       <LineChart skipAnimation
 
         yAxis={[
@@ -151,9 +160,21 @@ function App() {
         ]}
         bottomAxis={null}
         grid={{ horizontal: true }}
-        width={500}
-        height={300}
+        width={300}
+        height={200}
       />
+      </Box>
+      */}
+      <p id ="supported">{supportText}</p>
+      <Box
+        display="flex"
+        justifyContent="space-around"
+        width="100%"
+      >
+        <Monitor></Monitor>
+        <Monitor></Monitor>
+      </Box>
+      
       {/*<canvas id="hr_chart" style="width:100%;max-width:700px"></canvas>
       <script src = "./script2.js"></script>*/}
     </>
