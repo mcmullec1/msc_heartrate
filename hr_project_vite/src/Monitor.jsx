@@ -2,28 +2,47 @@ import React, { useState, useEffect } from 'react';
 import { LineChart } from '@mui/x-charts/LineChart';
 import Box from '@mui/material/Box';
 
-function Monitor() {
+function Monitor({timeInterval}) {
 
     const [supportText, setSupportText] = useState('');
     const [connected, setConnected] = useState('Not Connected')
-    const [hr, setHR] = useState('0');
+    const [hr, setHR] = useState(0);
     const [hrData, setHrData] = useState(new Array(200).fill(0))
     const [deviceName, setName] = useState("N/A")
     const [battery, setBattery] = useState("")
+    const [sessionData, setSessionData] = useState({})
 
   
     useEffect(()=>{
-        console.log("heart_rate", hr)
-        console.log(hrData)
-        console.log(battery)
-    }, [hr]);
+        console.log("heart_rate at",timeInterval, hr)
+        if(timeInterval != null){
+            let newSessionData = sessionData
+            newSessionData[timeInterval.toString()] = hr
+            setSessionData(newSessionData)
+        }
+        console.log(sessionData)
+        //sessionData[timeInterval.toString()] = hr
+        //console.log(sessionData)
+        //console.log(hrData)
+        //console.log(sessionData)
+        //console.log(timeInterval)
+    }, [timeInterval]);
 
     function handleHrChange(event){
         let value = event.target.value;
         let heartrate = value.getUint8(1);
+
         let newData = hrData
         newData[newData.length] = heartrate
         newData = newData.slice(-200)
+
+        /*
+        let newSessionData = sessionData
+        newSessionData.push(heartrate)
+        console.log(newSessionData)
+        setSessionData(newSessionData)
+        */
+
         setHrData(newData)
         setHR(heartrate)
 
@@ -48,7 +67,7 @@ function Monitor() {
         setName(device.name)
         device.addEventListener('gattserverdisconnected', () => {
             setConnected("Disconnected");
-            setHR('0')
+            setHR(0)
             setHrData(new Array(200).fill(0))
             });
 

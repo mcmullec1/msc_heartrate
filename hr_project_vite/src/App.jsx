@@ -7,82 +7,62 @@ import Box from '@mui/material/Box';
 
 function App() {
 
-  //let p = document.getElementById("p_text") 
-  //let p_text = useRef()
-  //let supported = useRef()
-  const [supportText, setSupportText] = useState('');
-  const [connected, setConnected] = useState('Not Connected')
-  const [hr, setHR] = useState('0');
-  const [hrData, setHrData] = useState(new Array(200).fill(0))
+  const [time, setTime] = useState(new Date())
 
-  
-  useEffect(()=>{
-    console.log("heart_rate", hr)
-    console.log(hrData)
-  }, [hr]);
-  
-  
+  const [supportText, setSupportText] = useState('');
+
+  //const [connected, setConnected] = useState('Not Connected')
+  //const [hr, setHR] = useState('0');
+  //const [hrData, setHrData] = useState(new Array(200).fill(0))
 
   
 
   if (navigator.bluetooth === undefined) {
-    //document.getElementById("supported").innerHTML = "Bluetooth is not supported."
-    //supported.text.textContent = "Bluetooth is not supported" ;
     useEffect(()=>{
       setSupportText('Bluetooth is not supported.');
     }, []);
-    //setSupportText('Bluetooth is not supported.')
   }
   else{
-    //document.getElementById("supported").innerHTML = "Bluetooth is supported!"
     useEffect(()=>{
       setSupportText('Bluetooth is supported.');
     }, []);
   }
 
   /*
-  useEffect((event) => {
-    async function handleHrChange(event){
-      let value = event.target.value;
-      let heartrate = value.getUint8(1);
-      hrData[hrData.length] = heartrate
-      hrData = hrData.slice(-200)
-      console.log(hrData)
-      setHrText(heartrate + "BPM");
-      
-    }
-    handleHrChange()
-
-})
-*/
-
-  
+  useEffect(() => {
+    console.log(time)
+  },[time])
+  */
 
 
-      //let button = document.getElementById("connect_button") ;
-      //let connect_button = useRef();
-      //button.style.cursor = "pointer" ;
 
-      //When the heartrate number changes
-
+  useEffect(() => {
     /*
-    handleHrChange = (event) => {
-        let value = event.target.value ; 
-        //we select the eight bytes that contain the heartrate
-        let heartrate = value.getUint8(1);
-        hrData[hrData.length] = heartrate
-        hrData = hrData.slice(-200)
-        console.log(hrData)
-        useEffect(()=>{
-          setHrText(heartrate + "BPM");
-        }, []);
-        //p.textContent = heartrate + " BPM";
-
-        
+    async function getTime(){
+        const now = new Date()
+        setTime(now)
+    }
+    getTime()
+  
+    var timer = setInterval(getTime, 30000)
+    console.log(time)
+    return function cleanup() {
+        clearInterval(timer)
     }
     */
+
+    const interval = setInterval(() => {
+      setTime(new Date());
+    }, 5000);
+
+    return () => clearInterval(interval);
+
+  }, [])
+
+
+
       
-    
+    /*
     function handleHrChange(event){
       let value = event.target.value;
       let heartrate = value.getUint8(1);
@@ -90,18 +70,11 @@ function App() {
       newData[newData.length] = heartrate
       newData = newData.slice(-200)
       setHrData(newData)
-      //console.log(hrData)
-      //console.log(heartrate)
-      setHR(heartrate)
-      /*
-      useEffect(()=>{
-        setHrText(heartrate + "BPM");
-      }, []);
-      */
-    }
-  
-    
 
+      setHR(heartrate)
+
+    }
+   
 
     async function toConnect() {
         const device = await navigator.bluetooth.requestDevice({
@@ -116,14 +89,27 @@ function App() {
           setHrData(new Array(200).fill(0))
          });
 
+        //Heart rate
         const service = await server.getPrimaryService('heart_rate')
         const char = await service.getCharacteristic('heart_rate_measurement')
         char.startNotifications()
         char.addEventListener('characteristicvaluechanged', handleHrChange)
 
+        const service2 = await server.getPrimaryService('battery_service')
+        const char2 = await service.getCharacteristic('battery_level')
+        char2.startNotifications()
+        char2.addEventListener('characteristicvaluechanged', handleBatteryChange)
+
     }
 
-  
+  */
+
+  /*
+  useEffect(()=>{
+    console.log("heart_rate", hr)
+    console.log(hrData)
+  }, [hr]);
+  */
 
 
 
@@ -171,12 +157,10 @@ function App() {
         justifyContent="space-around"
         width="100%"
       >
-        <Monitor></Monitor>
+        <Monitor timeInterval={time}></Monitor>
         <Monitor></Monitor>
       </Box>
       
-      {/*<canvas id="hr_chart" style="width:100%;max-width:700px"></canvas>
-      <script src = "./script2.js"></script>*/}
     </>
   )
 }
