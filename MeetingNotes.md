@@ -18,3 +18,11 @@
 - Share GitHub project permission with Jose
 - Workshop July 10th
 - Email Ryan about H10 purchasing
+
+## Thursday July 11, 2024
+- Literary review is background articles/reserach on the technology
+- Technology review is instances where what you've built has been done before (can use git repositories)
+- Explore using input for names of participants (perhaps email as well)
+- Built a download CSV option for the session data
+- Add metrics such as avg and max/min
+- Begin work on flow chart/ use case diagram
