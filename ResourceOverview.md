@@ -1,23 +1,30 @@
 ## Literary Review Source List
 
 #### Textbooks:
-https://dl.ebooksworld.ir/books/Beginning.ReactJS.Foundations.Chris.Minnick.Wiley.9781119685548.EBooksWorld.ir.pdf
-https://daskalakispiros.com/files/Ebooks/Intro+to+Bluetooth+Low+Energy+v1.1.pdf
+- https://daskalakispiros.com/files/Ebooks/Intro+to+Bluetooth+Low+Energy+v1.1.pdf
+- https://dl.ebooksworld.ir/books/Beginning.ReactJS.Foundations.Chris.Minnick.Wiley.9781119685548.EBooksWorld.ir.pdf
+
 
 #### Journals:
-https://ieeexplore.ieee.org/document/6246921
-https://ieeexplore.ieee.org/document/6765297
-https://www.researchgate.net/publication/363153858_A_Comparative_Study_of_ANT_Technology-Based_Healthcare_Systems
-https://www.researchgate.net/publication/303469980_A_Flexible_and_Scalable_Architecture_for_Real-Time_ANT_Sensor_Data_Acquisition_and_NoSQL_Storage
-http://hh.diva-portal.org/smash/get/diva2:972465/FULLTEXT01.pdf
+- https://ieeexplore.ieee.org/document/6246921
+- https://ieeexplore.ieee.org/document/6765297
+- https://www.researchgate.net/publication/363153858_A_Comparative_Study_of_ANT_Technology-Based_Healthcare_Systems
+- https://www.researchgate.net/publication/303469980_A_Flexible_and_Scalable_Architecture_for_Real-Time_ANT_Sensor_Data_Acquisition_and_NoSQL_Storage
+- http://hh.diva-portal.org/smash/get/diva2:972465/FULLTEXT01.pdf
+
+#### Git Repos:
+- https://github.com/WebBluetoothCG/demos/tree/gh-pages/heart-rate-sensor
+- https://github.com/megaconfidence/bt-heart-monitor/blob/main/index.js
+- https://github.com/BluetoothRocks/Pulse
+
+
+
+#### *************************** Other Sources *****************************************
 
 #### Statistics:
 https://survey.stackoverflow.co/2023/#section-most-popular-technologies-web-frameworks-and-technologies
 
-
-
-
-#### Resource Overview
+#### Git Repos
 
 https://github.com/8beeeaaat/web-ant-plus
 
