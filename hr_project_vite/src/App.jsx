@@ -1,6 +1,7 @@
 
 import './App.css'
 import Monitor from './Monitor';
+import Monitors from './Monitors';
 import React, { useState, useEffect } from 'react';
 import { LineChart } from '@mui/x-charts/LineChart';
 import Box from '@mui/material/Box';
@@ -157,8 +158,9 @@ function App() {
         justifyContent="space-around"
         width="100%"
       >
-        <Monitor timeInterval={time}></Monitor>
-        <Monitor></Monitor>
+        {/*<Monitor timeInterval={time} id = {1}></Monitor>
+        <Monitor timeInterval={time} id = {2}></Monitor>*/}
+        <Monitors timeInterval={time} monitor_count = {2}></Monitors>
       </Box>
       
     </>

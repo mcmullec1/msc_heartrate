@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LineChart } from '@mui/x-charts/LineChart';
 import Box from '@mui/material/Box';
 
-function Monitor({timeInterval}) {
+function Monitor({timeInterval, id}) {
 
     const [supportText, setSupportText] = useState('');
     const [connected, setConnected] = useState('Not Connected')
@@ -20,7 +20,7 @@ function Monitor({timeInterval}) {
             newSessionData[timeInterval.toString()] = hr
             setSessionData(newSessionData)
         }
-        console.log(sessionData)
+        console.log(id, sessionData)
         //sessionData[timeInterval.toString()] = hr
         //console.log(sessionData)
         //console.log(hrData)
