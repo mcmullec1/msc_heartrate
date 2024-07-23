@@ -26,3 +26,9 @@
 - Built a download CSV option for the session data
 - Add metrics such as avg and max/min
 - Begin work on flow chart/ use case diagram
+
+## Tuesday July 23, 2024
+- Ask Ryan his preferences on AVG, MAX and MIN (perhaps an average bar on the chart may be helpful)
+- Try not to repeat yourself in report, instead refer back to sections
+- Draft due 12th however additional changes can be made post draft
+- Work on implementing design and downloading data
