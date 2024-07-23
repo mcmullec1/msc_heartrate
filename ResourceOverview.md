@@ -20,6 +20,7 @@
 
 #### Websites:
 - https://www.bluetooth.com/wp-content/uploads/Files/Specification/HTML/Core-54/out/en/host/generic-attribute-profile--gatt-.html
+- https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API
 
 
 
