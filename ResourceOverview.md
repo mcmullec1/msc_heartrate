@@ -11,11 +11,15 @@
 - https://www.researchgate.net/publication/363153858_A_Comparative_Study_of_ANT_Technology-Based_Healthcare_Systems
 - https://www.researchgate.net/publication/303469980_A_Flexible_and_Scalable_Architecture_for_Real-Time_ANT_Sensor_Data_Acquisition_and_NoSQL_Storage
 - http://hh.diva-portal.org/smash/get/diva2:972465/FULLTEXT01.pdf
+- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7294494
 
 #### Git Repos:
 - https://github.com/WebBluetoothCG/demos/tree/gh-pages/heart-rate-sensor
 - https://github.com/megaconfidence/bt-heart-monitor/blob/main/index.js
 - https://github.com/BluetoothRocks/Pulse
+
+#### Websites:
+- https://www.bluetooth.com/wp-content/uploads/Files/Specification/HTML/Core-54/out/en/host/generic-attribute-profile--gatt-.html
 
 
 
