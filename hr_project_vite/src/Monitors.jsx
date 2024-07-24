@@ -3,7 +3,7 @@ import Monitor from './Monitor';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
-function Monitors({monitor_count, timeInterval}) {
+function Monitors({monitor_count, timeInterval, colours}) {
 
 
     //const array = Array.from(Array(monitor_count).keys()).map((i, index) => {return i})
@@ -17,13 +17,13 @@ function Monitors({monitor_count, timeInterval}) {
         <Grid 
             container
             width="100%"
-            spacing={0}
+            spacing={4}
             alignItems="center"
             justifyContent="space-around"
             >
             {Array.from(Array(monitor_count).keys()).map((i, index) => {
                 return (
-                    <Grid item key={i}><Monitor timeInterval={timeInterval} id={i}/></Grid>
+                    <Grid item key={i}><Monitor timeInterval={timeInterval} colours={colours} id={i}/></Grid>
                 );
             })}
         </Grid>

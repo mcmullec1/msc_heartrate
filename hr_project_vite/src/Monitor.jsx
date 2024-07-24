@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart } from '@mui/x-charts/LineChart';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import './App.css'
 
-function Monitor({timeInterval, id}) {
+function Monitor({timeInterval, colours, id}) {
 
     const [supportText, setSupportText] = useState('');
     const [connected, setConnected] = useState('Not Connected')
@@ -93,39 +95,74 @@ function Monitor({timeInterval, id}) {
     return (
         <>
         <Box
-            width={300}
+            width={375}
+            height={350}
             display="flex"
             flexDirection="column"
             alignItems="center"
+            justifyContent="space-around"
+            color={colours["dark_green"]}
+            backgroundColor="white"
+            borderRadius={20}
         >
-          
-            <p id ="supported">{supportText}</p>
-            <p>{connected}</p>
-            <p>{deviceName}</p>
-            {/*<p>{battery}</p>*/}
-            <button onClick={() => toConnect()}>Connect</button>
-            <p id = "p_text" >{hr}</p>
+        
+            <Box
+                height="25%"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+            >
+                <p className='bpm_num'>{hr}</p>
+            </Box>
 
-            <LineChart skipAnimation
+            <Box
+                height="35%"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="center"
+            >
+                <LineChart skipAnimation
 
-                yAxis={[
-                {
-                    min: 50,
-                    max: 160,
-                },
-                ]}  
-                series={[
-                {
-                    data: hrData,
-                    area: true,
-                    showMark: false,
-                },
-                ]}
-                bottomAxis={null}
-                grid={{ horizontal: true }}
-                width={300}
-                height={200}
-            />
+                    yAxis={[
+                    {
+                        min: 50,
+                        max: 200,
+                    },
+                    ]}  
+                    series={[
+                    {
+                        data: hrData,
+                        area: true,
+                        showMark: false,
+                        color: colours["light_green"]
+                    },
+                    ]}
+                    bottomAxis={null}
+                    grid={{ horizontal: true }}
+                    width={375}
+                    height={250}
+                />
+            </Box>
+
+            <Box
+                height="30%"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="space-around"
+            >
+                <p>{deviceName}</p>
+                <p>{connected}</p>
+                {/*<p>{battery}</p>*/}
+                <button
+                    onClick={() => toConnect()}
+                    /*backgroundColor={colours.light_green}*/
+                    className='connect_button'
+
+                >CONNECT</button>
+            </Box>
+
         </Box>
         </>
     )

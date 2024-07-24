@@ -12,6 +12,14 @@ function App() {
 
   const [supportText, setSupportText] = useState('');
 
+  const colours = {'dark_green': '#063532', 
+                    'light_green': '#00A06E',
+                    'blue': '#3EA9E0',
+                    'pink' : '#E75172',
+                    'lime': '#C7D540',
+                    'plum' : '#3F1D4E'
+  }
+
   //const [connected, setConnected] = useState('Not Connected')
   //const [hr, setHR] = useState('0');
   //const [hrData, setHrData] = useState(new Array(200).fill(0))
@@ -152,7 +160,14 @@ function App() {
       />
       </Box>
       */}
-      <p id ="supported">{supportText}</p>
+      <Box
+        width="100%"
+        height="100px"
+        backgroundColor="white"
+        marginBottom="20px"
+      >
+        <p id ="supported">{supportText}</p>
+      </Box>
       <Box
         display="flex"
         justifyContent="space-around"
@@ -160,7 +175,7 @@ function App() {
       >
         {/*<Monitor timeInterval={time} id = {1}></Monitor>
         <Monitor timeInterval={time} id = {2}></Monitor>*/}
-        <Monitors timeInterval={time} monitor_count = {2}></Monitors>
+        <Monitors timeInterval={time} monitor_count = {6} colours = {colours}></Monitors>
       </Box>
       
     </>

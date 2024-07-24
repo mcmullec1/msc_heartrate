@@ -1,3 +1,20 @@
 #root{
     width: 100%;
+    --dark_green: #063532; 
+    --light_green: #00A06E;
+    --pink: #E75172;
+    --blue: #3EA9E0;
+    --lime: #C7D540;
+    --plum: #3F1D4E;
+
+}
+
+.connect_button{
+    background-color: var(--light_green);
+    color: white;
+}
+
+.bpm_num{
+    font-weight: bolder;
+    font-size: 50pt;
 }
