@@ -5,12 +5,25 @@ import Monitors from './Monitors';
 import React, { useState, useEffect } from 'react';
 import { LineChart } from '@mui/x-charts/LineChart';
 import Box from '@mui/material/Box';
+import logo from "/logo.png"
+import download from "/download.png"
+import DownloadButton from './DownloadButton';
 
 function App() {
 
   const [time, setTime] = useState(new Date())
 
   const [supportText, setSupportText] = useState('');
+
+  const [overallSessionData, setOverallSessionData] = useState([])
+
+  const colours = { 'blue': '#3EA9E0',
+                    'plum' : '#3F1D4E',
+                    'lime': '#C7D540',
+                    'pink' : '#E75172',
+                    'light_green': '#00A06E',
+                    'dark_green': '#063532'
+  }
 
   //const [connected, setConnected] = useState('Not Connected')
   //const [hr, setHR] = useState('0');
@@ -61,7 +74,9 @@ function App() {
   }, [])
 
 
-
+    const handleDownload = () => {
+      console.log("Download")
+    }
       
     /*
     function handleHrChange(event){
@@ -112,6 +127,17 @@ function App() {
   }, [hr]);
   */
 
+  function handleSessionData(data, id){
+    //console.log("THING TO ADD:")
+    //console.log(data)
+    let newSessionData = overallSessionData
+    newSessionData.push(data)
+    setOverallSessionData(newSessionData)
+    console.log(overallSessionData)
+    //let new_item = {"timeInveral":data.}
+    
+  }
+
 
 
   
@@ -152,7 +178,53 @@ function App() {
       />
       </Box>
       */}
-      <p id ="supported">{supportText}</p>
+      <Box
+        width="100%"
+        height="75px"
+        backgroundColor={colours["dark_green"]}
+        color={colours["light_green"]}
+        marginBottom="20px"
+        display="flex"
+        flexDirection="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Box
+          component="img"
+          sx={{
+            height: "60px",
+          }}
+          alt="University of Roehampton Logo."
+          src={logo}
+        ></Box>
+        <p id ="supported">{supportText}</p>
+        <DownloadButton colours = {colours} overallSessionData = {overallSessionData}></DownloadButton>
+        {/*
+        <button className='download_button' onClick={handleDownload}>
+          <Box
+          height="50px"
+          width="50px"
+          backgroundColor={colours["light_green"]}
+          borderRadius="100%"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          //marginRight="20px"
+          //marginLeft="64px"
+          >
+            <Box
+              component="img"
+              sx={{
+                height: "30px",
+              }}
+              alt="Download symbol."
+              src={download}
+            ></Box>
+          </Box>
+        </button>
+      */}
+
+      </Box>
       <Box
         display="flex"
         justifyContent="space-around"
@@ -160,7 +232,7 @@ function App() {
       >
         {/*<Monitor timeInterval={time} id = {1}></Monitor>
         <Monitor timeInterval={time} id = {2}></Monitor>*/}
-        <Monitors timeInterval={time} monitor_count = {2}></Monitors>
+        <Monitors timeInterval={time} monitor_count = {6} colours = {colours} sendData={handleSessionData}></Monitors>
       </Box>
       
     </>
