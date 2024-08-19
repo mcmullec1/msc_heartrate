@@ -20,6 +20,9 @@ This repository includes the following files and folders:
 ##### Proposal
 - the project proposal including signatures from the supervisor and myself
 
+##### Meeting Notes
+- a short summary of each supervisor meeting
+
 
 ### Important Links:
 
