@@ -14,7 +14,7 @@ This repository includes the following files and folders:
 ##### Flow Chart 📈
 - a diagram that outlines the flow of the website and how the user will interact with the site
 
-##### User Interview 🎤
+##### User Interview 🎙️
 - an informal interview of feedback after providing wireframes to the intended user
 
 ##### Proposal 📄
