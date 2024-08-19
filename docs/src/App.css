@@ -1,0 +1,50 @@
+#root{
+    width: 100%;
+    --dark_green: #063532; 
+    --light_green: #00A06E;
+    --pink: #E75172;
+    --blue: #3EA9E0;
+    --lime: #C7D540;
+    --plum: #3F1D4E;
+
+}
+
+.nameLabel{
+    font-size: 18pt;
+}
+  
+
+.connect_button{
+    background-color: var(--light_green);
+    color: white;
+}
+
+.connect_button:hover {
+    border-color: var(--dark_green);
+}
+
+.bpm_num{
+    font-weight: bolder;
+    font-size: 50pt;
+}
+
+.download_button{
+    padding:0;
+    margin:0;
+    width:50px;
+    height:50px;
+    margin-right:20px;
+    margin-left:64px;
+    border-radius: 100%;
+}
+
+
+/*
+.connect_popup{
+    width: 345px;
+    height: 315px;
+    position: "absolute";
+    z-index: 99;
+    background-colour : "white";
+}
+*/
