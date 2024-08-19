@@ -1,0 +1,3 @@
+[submodule "hr_website"]
+	path = hr_website
+	url = https://github.com/mcmullec1/hr_website.git
