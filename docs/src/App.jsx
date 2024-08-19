@@ -197,7 +197,7 @@ function App() {
           alt="University of Roehampton Logo."
           src={logo}
         ></Box>
-        <p id ="supported">{supportText}</p>
+        <p className="bluetooth" >{supportText}</p>
         <DownloadButton colours = {colours} overallSessionData = {overallSessionData}></DownloadButton>
         {/*
         <button className='download_button' onClick={handleDownload}>
