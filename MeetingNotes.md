@@ -32,3 +32,10 @@
 - Try not to repeat yourself in report, instead refer back to sections
 - Draft due 12th however additional changes can be made post draft
 - Work on implementing design and downloading data
+
+## Tuesday August 13, 2024
+- Update references to be within the sentence
+- Remove related works
+- Add additional figures to break up text
+- Fix titles of studies, ie remove the year reference
+- Add computer science font to code snippets in quotes
