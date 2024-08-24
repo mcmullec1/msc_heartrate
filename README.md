@@ -17,6 +17,9 @@ This repository includes the following files and folders:
 ##### User Interview 🎙️
 - an informal interview of feedback after providing wireframes to the intended user
 
+##### Think Aloud Testing 🗣️
+- three user testing interview transcipts
+
 ##### Proposal 📄
 - the project proposal including signatures from the supervisor and myself
 
